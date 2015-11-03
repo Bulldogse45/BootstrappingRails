@@ -1,0 +1,14 @@
+<h1 class="text-center">AFC South</h1>
+<div class="conainer">
+  <div class="col-md-7 col-xs-12">
+    <p class="text-center"><%= link_to "Home", index_page_path %></p>
+  </div>
+  <div class="col-xs-12 col-md-5">
+    <% @afc_south.each do |team| %>
+      <div class="col-md-12 col-xs-3">
+        <%= link_to image_tag(team[:name].downcase), team_page_path(:team => team[:name]) %>
+        <%= link_to team[:name], team_page_path(:team => team[:name]) %>
+      </div>
+    <% end %>
+  </div>
+</div>
